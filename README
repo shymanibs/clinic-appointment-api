@@ -38,3 +38,9 @@ This section describes the basic token security added to the API.
 
 ### Educational Limitations 
 **Note:** This configuration is strictly for learning purposes in class. It hardcodes data and does not expire tokens. A real-world production system must use safe password hashing, proper databases, expiring tokens (like JWT), and HTTPS to protect patient privacy.
+
+## Logout
+
+This API does not have a real logout endpoint because the server does not store tokens anywhere — it only checks if the token matches the hardcoded value. Since there is no session or database record to delete, there is nothing to "destroy" on logout.
+
+In a real production system, logout would work by storing tokens in a database and deleting the record when the user logs out, or by using JWT tokens with an expiration time so they automatically become invalid after a set period.
