@@ -20,3 +20,21 @@ Git
 docker compose up --build
 a
 Open http://localhost:8000/docs.
+
+## Authentication
+
+This section describes the basic token security added to the API. 
+
+### Test Account 
+- Username: admin  
+- Password: clinic123 
+- Token: clinic-secret-token 
+
+### API Endpoints 
+- `POST /login` — Public. Submit your credentials here to get your token. 
+- `GET /` — Public. Welcome page. 
+
+- All appointment routes (`GET`, `POST`, `PUT`, `DELETE`) and `/me` now require you to provide the bearer token. 
+
+### Educational Limitations 
+**Note:** This configuration is strictly for learning purposes in class. It hardcodes data and does not expire tokens. A real-world production system must use safe password hashing, proper databases, expiring tokens (like JWT), and HTTPS to protect patient privacy.
